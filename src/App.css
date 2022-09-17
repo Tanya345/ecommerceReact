@@ -1,38 +1,93 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.filterDiv{
+  display: flex;
+  justify-content: space-between;
+}
+.form-select{
+  width:auto
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.productsDiv{
+  color: aliceblue;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+table>thead{
+  background-color:cornflowerblue;
+}
+table>thead>th{
+  padding: 15px 0px;
+  font-size: 1.2rem;
+  color: aliceblue;
+}
+.hrStyle{
+  color: whitesmoke;
+  opacity: 1;
+}
+tr>td>img{
+  border-radius:30px;
+  padding: 10px 5px;
+}
+.quantInput{
+  width: 60px;
+  margin-right: 2px;
+}
+.cartDiv{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+.cartItemsDiv{
+  width: 70vw;
+  height: 100vh;
+}
+.cartTotal{
+  width:30vw;
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 2rem 1rem;
+}
+.card{
+  width:90%;
+}
+.checkout{
+  background-color: #3131bf;
   color: white;
+  border-radius: 29px;
+  padding: 7px;
+  margin: 12px 5px;
+  outline: none;
+  border:none
+}
+.thankYouDiv{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+.thankYouCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 16px 7px 40px #ffffff61;
+}
+.btn{
+  padding: 0.175rem 0.75rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cartQuantity{
+  border: 1px solid white;
+  border-radius: 24px;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
 }
