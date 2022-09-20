@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { AppContext } from '../App'
-import ThankYou from './ThankYou'
+import {useNavigate} from 'react-router-dom'
 
 const Cart = () => {
-  const [isCheckout, setIsCheckout] = useState(false)
-  const { cartItems, setCartItems, addToCart, setAddToCart} = useContext(AppContext)
+  let navigate = useNavigate()
+  // const [isCheckout, setIsCheckout] = useState(false)
+  const { cartItems, setCartItems} = useContext(AppContext)
   const [items, setItems] = useState()
   const [quantity, setQuantity ] =useState(false)
   const api = 'https://dummyjson.com/carts/add';
@@ -26,7 +27,8 @@ const Cart = () => {
   }, [cartItems,quantity])
 
   const handleCheckOut = () => {
-    setIsCheckout(!isCheckout)
+    // setIsCheckout(!isCheckout)
+    navigate('/thankyou')
     setCartItems([])
   }
 
@@ -59,9 +61,9 @@ const Cart = () => {
   }
 
   return (
-    isCheckout ?
-      <ThankYou />
-      :
+    // isCheckout ?
+    //   <ThankYou />
+    //   :
       <div className='cartDiv'>
         {cartItems.length > 0 ? (
           <>
@@ -119,7 +121,7 @@ const Cart = () => {
           </>) :
           (<div className="d-flex flex-column align-items-center justify-content-center w-100">
             <h2>Cart is empty</h2>
-            <button className='checkout' onClick={() => setAddToCart(!addToCart)}>Add Products</button>
+            <button className='checkout' onClick={() => navigate('/')}>Add Products</button>
           </div>)}
       </div>
   )

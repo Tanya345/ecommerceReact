@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
 }
-.App {
+/* .App {
   text-align: center;
-}
+} */
 .filterDiv{
   display: flex;
   justify-content: space-between;
