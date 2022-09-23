@@ -1,12 +1,13 @@
-import React, { useState, useEffect,createContext } from 'react'
+import React, { useState, useEffect,createContext, useContext } from 'react'
+import { AppContext } from '../App';
 import Filters from './Filters'
 import Products from './Products'
 export const StoreContext = createContext([]);
 
 let filterArr=[]
 const Store = () => {
+	const {currentCategory,setCurrentCategory} = useContext(AppContext)
 	const [products, setProducts] = useState([])
-	const [currentCategory, setCurrentCategory] = useState('All')
 	const [categories, setCategories] = useState([])
 	const [filterValue, setFilterValue] = useState('')
 

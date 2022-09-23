@@ -12,11 +12,11 @@ import ThankYou from './components/ThankYou';
 export const AppContext = createContext(null)
 
 function App() {
-  // const [addToCart, setAddToCart] = useState(false)
+  const [currentCategory,setCurrentCategory] = useState('All')
   const [cartItems, setCartItems] = useState([])
 
   return (
-    <AppContext.Provider value={{ cartItems, setCartItems }}>
+    <AppContext.Provider value={{ cartItems, setCartItems ,currentCategory,setCurrentCategory}}>
       <Router>
         <Routes>
         <Route exact path="/" element={<Store />} />
@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/thankyou" element={<ThankYou />} />
         </Routes>
       </Router>
-    </AppContext.Provider>
+    </AppContext.Provider> 
   );
 }
 
